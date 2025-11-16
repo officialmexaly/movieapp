@@ -4,6 +4,8 @@ import { useQuery } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Header } from '@/components/Header'
+import { Sidebar } from '@/components/Sidebar'
+import { Footer } from '@/components/Footer'
 import { BottomNav } from '@/components/BottomNav'
 import { FeaturedCard } from '@/components/FeaturedCard'
 import { CategorySection } from '@/components/CategorySection'
@@ -147,8 +149,9 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-bg-main">
       <Header />
+      <Sidebar />
 
-      <main className="pt-20 pb-24 md:pb-8">
+      <main className="pt-20 pb-24 md:pb-8 md:pl-64">
         {/* Featured Section */}
         <section className="mb-12 px-4">
           <AnimatePresence mode="wait">
@@ -234,6 +237,8 @@ export default function HomePage() {
             <CategorySection title="Classic Collection" movies={classics} />
           )}
         </div>
+
+        <Footer />
       </main>
 
       <BottomNav />
