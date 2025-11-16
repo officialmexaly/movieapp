@@ -149,9 +149,11 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-bg-main">
       <Header />
-      <Sidebar />
 
-      <main className="pt-20 pb-24 md:pb-8 md:pl-64">
+      <div className="flex">
+        <Sidebar />
+
+        <main className="flex-1 pt-20 pb-24 md:pb-8">
         {/* Featured Section */}
         <section className="mb-12 px-4">
           <AnimatePresence mode="wait">
@@ -238,8 +240,9 @@ export default function HomePage() {
           )}
         </div>
 
-        <Footer />
-      </main>
+          <Footer />
+        </main>
+      </div>
 
       <BottomNav />
     </div>
