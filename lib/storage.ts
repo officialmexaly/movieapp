@@ -16,10 +16,10 @@ export interface WatchHistoryItem {
 }
 
 const STORAGE_KEYS = {
-  USER_PREFERENCES: 'deyeturn_user_preferences',
-  WATCH_HISTORY: 'deyeturn_watch_history',
-  MY_LIST: 'deyeturn_my_list',
-  CONTINUE_WATCHING: 'deyeturn_continue_watching',
+  USER_PREFERENCES: 'padrestream_user_preferences',
+  WATCH_HISTORY: 'padrestream_watch_history',
+  MY_LIST: 'padrestream_my_list',
+  CONTINUE_WATCHING: 'padrestream_continue_watching',
 }
 
 // User Preferences

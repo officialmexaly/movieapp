@@ -1,7 +1,7 @@
-# D-eyeturn Flutter Movie App - Design Language & Style Guide
+# PadreStream Flutter Movie App - Design Language & Style Guide
 
 ## PROJECT OVERVIEW
-The app is called **D-eyeturn** (formerly FluxShorts) - a Netflix-like streaming application built with Flutter. It features a modern, dark-themed design with premium gradient effects and smooth animations.
+The app is called **PadreStream** (formerly FluxShorts) - a Netflix-like streaming application built with Flutter. It features a modern, dark-themed design with premium gradient effects and smooth animations.
 
 ---
 
@@ -182,7 +182,7 @@ Stops: [0.0, 0.5, 1.0]
 ### 6. App Header
 - **Padding:** 24px horizontal, 20px vertical top
 - **Background:** Linear gradient fade (dark → transparent)
-- **Logo:** "D-eyeturn" with gradient mask (purple → blue → cyan)
+- **Logo:** "PadreStream" with gradient mask (purple → blue → cyan)
 - **Logo Animation:** Hero animation on navigation
 - **Font:** 24px, weight 900, letter-spacing -0.5
 

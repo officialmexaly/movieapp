@@ -1,6 +1,6 @@
 # Web Version Implementation Guide - CSS/Tailwind Equivalents
 
-This guide provides CSS and Tailwind CSS equivalents for replicating the D-eyeturn Flutter design in a web application.
+This guide provides CSS and Tailwind CSS equivalents for replicating the PadreStream Flutter design in a web application.
 
 ---
 

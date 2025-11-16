@@ -1,6 +1,6 @@
 # Design Documentation Index
 
-Welcome! This directory contains comprehensive design system documentation for replicating the D-eyeturn Flutter movie app design in your web version.
+Welcome! This directory contains comprehensive design system documentation for replicating the PadreStream Flutter movie app design in your web version.
 
 ---
 

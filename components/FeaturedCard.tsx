@@ -27,6 +27,7 @@ export function FeaturedCard({ movie }: FeaturedCardProps) {
         fill
         className="object-cover"
         priority
+        unoptimized
       />
 
       {/* Gradient Overlay */}

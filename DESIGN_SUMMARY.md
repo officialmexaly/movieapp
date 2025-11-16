@@ -1,8 +1,8 @@
-# Design Language Summary - D-eyeturn Movie App
+# Design Language Summary - PadreStream Movie App
 
 ## Quick Overview
 
-The D-eyeturn app (formerly FluxShorts) is a premium Netflix-like streaming application with a sophisticated dark theme and modern design language.
+The PadreStream app (formerly FluxShorts) is a premium Netflix-like streaming application with a sophisticated dark theme and modern design language.
 
 ### Key Design Characteristics
 - **Theme**: Pure dark mode (#0D0D0D background)

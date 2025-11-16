@@ -9,8 +9,8 @@ import { BottomNav } from '@/components/BottomNav'
 import { MovieCard } from '@/components/MovieCard'
 import { GenreChip } from '@/components/GenreChip'
 import { LoadingSpinner } from '@/components/LoadingSpinner'
-import * as tmdb from '@/services/tmdb'
-import { GENRES } from '@/services/tmdb'
+import * as tmdb from '@/services/tmdb-cached'
+import { GENRES } from '@/services/tmdb-cached'
 
 export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState('')

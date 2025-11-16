@@ -1,4 +1,4 @@
-# D-eyeturn Color Palette Quick Reference
+# PadreStream Color Palette Quick Reference
 
 ## Color Swatches
 

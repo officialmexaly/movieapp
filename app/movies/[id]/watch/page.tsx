@@ -16,7 +16,7 @@ import {
   Subtitles,
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import * as tmdb from '@/services/tmdb'
+import * as tmdb from '@/services/tmdb-cached'
 import { updateWatchProgress, getWatchProgress } from '@/lib/storage'
 
 // Dynamically import ReactPlayer to avoid SSR issues

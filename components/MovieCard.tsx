@@ -50,6 +50,8 @@ export function MovieCard({ movie, index = 0 }: MovieCardProps) {
             fill
             className="object-cover"
             sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+            loading="lazy"
+            unoptimized
           />
 
           {/* Overlay on hover */}

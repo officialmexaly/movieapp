@@ -22,9 +22,9 @@ const FAQ_DATA: FAQCategory[] = [
     category: 'General',
     faqs: [
       {
-        question: 'What is D-eyeturn?',
+        question: 'What is PadreStream?',
         answer:
-          'D-eyeturn is a premium movie streaming platform that offers thousands of movies and TV shows in HD and 4K quality. Stream your favorite content anytime, anywhere.',
+          'PadreStream is a premium movie streaming platform that offers thousands of movies and TV shows in HD and 4K quality. Stream your favorite content anytime, anywhere.',
       },
       {
         question: 'How do I sign up?',
@@ -84,7 +84,7 @@ const FAQ_DATA: FAQCategory[] = [
       {
         question: 'Which devices are supported?',
         answer:
-          'D-eyeturn works on web browsers, iOS and Android devices, Smart TVs, streaming devices (Roku, Fire TV, Chromecast), and gaming consoles.',
+          'PadreStream works on web browsers, iOS and Android devices, Smart TVs, streaming devices (Roku, Fire TV, Chromecast), and gaming consoles.',
       },
       {
         question: 'The app won\'t open. What should I do?',
@@ -161,7 +161,7 @@ export default function HelpPage() {
               <Mail size={32} className="text-brand-purple mb-3 mx-auto" />
               <p className="font-semibold">Email Support</p>
               <p className="text-sm text-white/70 mt-1">
-                support@deyeturn.com
+                support@padrestream.com
               </p>
             </button>
 
@@ -177,7 +177,7 @@ export default function HelpPage() {
             <button className="p-6 bg-bg-card rounded-xl hover:bg-bg-hover transition-colors">
               <Phone size={32} className="text-brand-purple mb-3 mx-auto" />
               <p className="font-semibold">Phone Support</p>
-              <p className="text-sm text-white/70 mt-1">1-800-DEYETURN</p>
+              <p className="text-sm text-white/70 mt-1">1-800-PADRE-STREAM</p>
             </button>
           </motion.div>
 

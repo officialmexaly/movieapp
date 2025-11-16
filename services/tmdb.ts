@@ -21,7 +21,7 @@ const tmdbApi = axios.create({
 
 // Helper to get image URL
 export const getImageUrl = (path: string | null, size: string = POSTER_SIZE): string => {
-  if (!path) return '/placeholder-movie.png'
+  if (!path) return '/placeholder-movie.svg'
   return `${IMAGE_BASE_URL}/${size}${path}`
 }
 

@@ -43,7 +43,7 @@ const NOTIFICATIONS: Notification[] = [
     id: '4',
     type: 'general',
     title: 'Update Available',
-    message: 'A new version of D-eyeturn is available with improvements.',
+    message: 'A new version of PadreStream is available with improvements.',
     time: '2 days ago',
     read: true,
   },

@@ -1,4 +1,4 @@
-# D-eyeturn - Premium Movie Streaming Web Application
+# PadreStream - Premium Movie Streaming Web Application
 
 A modern, responsive movie streaming web application built with Next.js 14, featuring a sleek dark theme with purple/blue gradients. This is the web version of the original Flutter mobile app.
 

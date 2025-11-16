@@ -119,6 +119,7 @@ export default function MovieDetailPage() {
             fill
             className="object-cover"
             priority
+            unoptimized
           />
 
           {/* Gradient Overlays */}
@@ -282,6 +283,7 @@ export default function MovieDetailPage() {
                           alt={cast.name}
                           fill
                           className="object-cover"
+                          unoptimized
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">

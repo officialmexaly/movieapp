@@ -13,85 +13,121 @@ import * as tmdb from '@/services/tmdb'
 export default function HomePage() {
   const [featuredIndex, setFeaturedIndex] = useState(0)
 
-  // Fetch all movie categories
+  // Query options for better caching and performance
+  const queryOptions = {
+    staleTime: 1000 * 60 * 5, // 5 minutes
+    gcTime: 1000 * 60 * 30, // 30 minutes (previously cacheTime)
+    refetchOnWindowFocus: false,
+  }
+
+  // Priority queries - load immediately
   const { data: trending } = useQuery({
     queryKey: ['trending'],
     queryFn: () => tmdb.getTrendingMovies('week'),
+    ...queryOptions,
   })
 
   const { data: popular } = useQuery({
     queryKey: ['popular'],
     queryFn: () => tmdb.getPopularMovies(),
+    ...queryOptions,
   })
 
   const { data: topRated } = useQuery({
     queryKey: ['topRated'],
     queryFn: () => tmdb.getTopRatedMovies(),
-  })
-
-  const { data: nowPlaying } = useQuery({
-    queryKey: ['nowPlaying'],
-    queryFn: () => tmdb.getNowPlayingMovies(),
-  })
-
-  const { data: upcoming } = useQuery({
-    queryKey: ['upcoming'],
-    queryFn: () => tmdb.getUpcomingMovies(),
-  })
-
-  const { data: action } = useQuery({
-    queryKey: ['action'],
-    queryFn: () => tmdb.getActionMovies(),
-  })
-
-  const { data: comedy } = useQuery({
-    queryKey: ['comedy'],
-    queryFn: () => tmdb.getComedyMovies(),
-  })
-
-  const { data: drama } = useQuery({
-    queryKey: ['drama'],
-    queryFn: () => tmdb.getDramaMovies(),
-  })
-
-  const { data: horror } = useQuery({
-    queryKey: ['horror'],
-    queryFn: () => tmdb.getHorrorMovies(),
-  })
-
-  const { data: scifi } = useQuery({
-    queryKey: ['scifi'],
-    queryFn: () => tmdb.getSciFiMovies(),
-  })
-
-  const { data: romance } = useQuery({
-    queryKey: ['romance'],
-    queryFn: () => tmdb.getRomanceMovies(),
-  })
-
-  const { data: thriller } = useQuery({
-    queryKey: ['thriller'],
-    queryFn: () => tmdb.getThrillerMovies(),
-  })
-
-  const { data: animation } = useQuery({
-    queryKey: ['animation'],
-    queryFn: () => tmdb.getAnimationMovies(),
-  })
-
-  const { data: family } = useQuery({
-    queryKey: ['family'],
-    queryFn: () => tmdb.getFamilyMovies(),
+    ...queryOptions,
   })
 
   const { data: awardWinning } = useQuery({
     queryKey: ['awardWinning'],
     queryFn: () => tmdb.getAwardWinningMovies(),
+    ...queryOptions,
+  })
+
+  // Deferred queries - load after priority content is visible
+  const { data: nowPlaying } = useQuery({
+    queryKey: ['nowPlaying'],
+    queryFn: () => tmdb.getNowPlayingMovies(),
+    ...queryOptions,
+    enabled: !!trending, // Wait for trending to load first
+  })
+
+  const { data: upcoming } = useQuery({
+    queryKey: ['upcoming'],
+    queryFn: () => tmdb.getUpcomingMovies(),
+    ...queryOptions,
+    enabled: !!trending,
+  })
+
+  const { data: action } = useQuery({
+    queryKey: ['action'],
+    queryFn: () => tmdb.getActionMovies(),
+    ...queryOptions,
+    enabled: !!popular,
+  })
+
+  const { data: comedy } = useQuery({
+    queryKey: ['comedy'],
+    queryFn: () => tmdb.getComedyMovies(),
+    ...queryOptions,
+    enabled: !!popular,
+  })
+
+  const { data: drama } = useQuery({
+    queryKey: ['drama'],
+    queryFn: () => tmdb.getDramaMovies(),
+    ...queryOptions,
+    enabled: !!popular,
+  })
+
+  const { data: horror } = useQuery({
+    queryKey: ['horror'],
+    queryFn: () => tmdb.getHorrorMovies(),
+    ...queryOptions,
+    enabled: !!topRated,
+  })
+
+  const { data: scifi } = useQuery({
+    queryKey: ['scifi'],
+    queryFn: () => tmdb.getSciFiMovies(),
+    ...queryOptions,
+    enabled: !!topRated,
+  })
+
+  const { data: romance } = useQuery({
+    queryKey: ['romance'],
+    queryFn: () => tmdb.getRomanceMovies(),
+    ...queryOptions,
+    enabled: !!topRated,
+  })
+
+  const { data: thriller } = useQuery({
+    queryKey: ['thriller'],
+    queryFn: () => tmdb.getThrillerMovies(),
+    ...queryOptions,
+    enabled: !!awardWinning,
+  })
+
+  const { data: animation } = useQuery({
+    queryKey: ['animation'],
+    queryFn: () => tmdb.getAnimationMovies(),
+    ...queryOptions,
+    enabled: !!awardWinning,
+  })
+
+  const { data: family } = useQuery({
+    queryKey: ['family'],
+    queryFn: () => tmdb.getFamilyMovies(),
+    ...queryOptions,
+    enabled: !!awardWinning,
   })
 
   const { data: classics } = useQuery({
     queryKey: ['classics'],
     queryFn: () => tmdb.getClassicMovies(),
+    ...queryOptions,
+    enabled: !!awardWinning,
   })
 
   // Auto-rotate featured movies every 5 seconds

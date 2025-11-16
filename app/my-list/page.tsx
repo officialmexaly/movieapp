@@ -9,7 +9,7 @@ import { BottomNav } from '@/components/BottomNav'
 import { MovieCard } from '@/components/MovieCard'
 import { LoadingSpinner } from '@/components/LoadingSpinner'
 import { getMyList, removeFromMyList } from '@/lib/storage'
-import { getMovieDetails } from '@/services/tmdb'
+import { getMovieDetails } from '@/services/tmdb-cached'
 import type { Movie } from '@/types/movie'
 
 export default function MyListPage() {
