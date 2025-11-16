@@ -45,7 +45,7 @@ export default function WatchPage() {
   const movieId = parseInt(params.id as string)
 
   const playerRef = useRef<any>(null)
-  const controlsTimeoutRef = useRef<NodeJS.Timeout>()
+  const controlsTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined)
 
   const [playing, setPlaying] = useState(false)
   const [volume, setVolume] = useState(1)
