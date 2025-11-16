@@ -1,16 +1,70 @@
-# movies
+# D-eyeturn - Premium Movie Streaming Web Application
 
-A new Flutter project.
+A modern, responsive movie streaming web application built with Next.js 14, featuring a sleek dark theme with purple/blue gradients. This is the web version of the original Flutter mobile app.
+
+## Features
+
+### 🎬 Core Features
+- **Browse Movies**: Explore thousands of movies across multiple categories
+- **Featured Carousel**: Auto-rotating featured movies with smooth animations
+- **Advanced Search**: Search with filters for genres, release year, ratings, and more
+- **Movie Details**: View comprehensive information including cast, reviews, and trailers
+- **Video Player**: Custom video player with quality selection and subtitle support
+- **My List**: Save movies to watch later
+- **Watch History**: Continue watching from where you left off
+
+### 📱 Pages
+- **Home**: Featured carousel + 15+ movie categories
+- **Search**: Advanced search with filters
+- **Movie Detail**: Full movie info with cast, reviews, trailers
+- **Video Player**: Custom player with controls
+- **Profile**: User preferences and settings
+- **My List**: Saved movies collection
+- **Subscription**: Plan management
+- **Privacy & Security**: Privacy and security settings
+- **Help & Support**: FAQs and contact options
+- **Inbox**: Notifications
+
+### 🛠 Tech Stack
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Data Fetching**: TanStack Query
+- **State Management**: Zustand
+- **Video Player**: React Player
+- **API**: The Movie Database (TMDB)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-A few resources to get you started if this is your first Flutter project:
+### Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Install dependencies:
+```bash
+npm install
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Run the development server:
+```bash
+npm run dev
+```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
+```bash
+npm run build
+npm start
+```
+
+## Environment Variables
+
+The `.env.local` file is already configured with TMDB API credentials.
+
+## License
+
+This project is for educational purposes only. Movie data and images are provided by TMDB.
