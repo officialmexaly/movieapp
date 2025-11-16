@@ -31,14 +31,14 @@ export function CategorySection({ title, movies }: CategorySectionProps) {
   if (!movies || movies.length === 0) return null
 
   return (
-    <div className="mb-12">
-      <h2 className="text-2xl font-bold mb-4 px-4">{title}</h2>
+    <div className="mb-8 md:mb-12">
+      <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 px-4 text-white">{title}</h2>
 
       <div className="relative group">
-        {/* Left Arrow */}
+        {/* Left Arrow - Desktop Only */}
         <button
           onClick={() => scroll('left')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/70 hover:bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="hidden md:block absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/80 backdrop-blur-sm hover:bg-brand-purple/80 opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
           aria-label="Scroll left"
         >
           <ChevronLeft size={24} />
@@ -47,20 +47,20 @@ export function CategorySection({ title, movies }: CategorySectionProps) {
         {/* Movies Container */}
         <div
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide px-4 scroll-smooth"
+          className="flex gap-3 md:gap-4 overflow-x-auto scrollbar-hide px-4 scroll-smooth snap-x snap-mandatory"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {movies.map((movie, index) => (
-            <div key={movie.id} className="flex-none w-40 md:w-48">
+            <div key={movie.id} className="flex-none w-36 md:w-48 snap-start">
               <MovieCard movie={movie} index={index} />
             </div>
           ))}
         </div>
 
-        {/* Right Arrow */}
+        {/* Right Arrow - Desktop Only */}
         <button
           onClick={() => scroll('right')}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/70 hover:bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="hidden md:block absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/80 backdrop-blur-sm hover:bg-brand-purple/80 opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
           aria-label="Scroll right"
         >
           <ChevronRight size={24} />

@@ -3,17 +3,17 @@
 import { useQuery } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Header } from '@/components/Header'
-import { Sidebar } from '@/components/Sidebar'
+import { AppLayout } from '@/components/AppLayout'
 import { Footer } from '@/components/Footer'
-import { BottomNav } from '@/components/BottomNav'
 import { FeaturedCard } from '@/components/FeaturedCard'
 import { CategorySection } from '@/components/CategorySection'
 import { SkeletonSection } from '@/components/SkeletonCard'
+import { useSidebar } from '@/contexts/SidebarContext'
 import * as tmdb from '@/services/tmdb'
 
-export default function HomePage() {
+function HomePageContent() {
   const [featuredIndex, setFeaturedIndex] = useState(0)
+  const { isCollapsed } = useSidebar()
 
   // Query options for better caching and performance
   const queryOptions = {
@@ -147,11 +147,7 @@ export default function HomePage() {
   const currentFeatured = featuredMovies[featuredIndex]
 
   return (
-    <div className="min-h-screen bg-bg-main">
-      <Header />
-      <Sidebar />
-
-      <main className="pt-20 pb-24 md:pb-8 md:pl-64">
+    <main className={`pt-20 pb-24 md:pb-8 transition-all duration-300 ${isCollapsed ? 'md:pl-20' : 'md:pl-60'}`}>
         {/* Featured Section */}
         <section className="mb-12 px-4">
           <AnimatePresence mode="wait">
@@ -238,10 +234,15 @@ export default function HomePage() {
           )}
         </div>
 
-        <Footer />
-      </main>
+      <Footer />
+    </main>
+  )
+}
 
-      <BottomNav />
-    </div>
+export default function HomePage() {
+  return (
+    <AppLayout>
+      <HomePageContent />
+    </AppLayout>
   )
 }

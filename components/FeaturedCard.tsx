@@ -35,7 +35,7 @@ export function FeaturedCard({ movie }: FeaturedCardProps) {
       <div className="absolute inset-0 bg-gradient-to-r from-bg-main/80 via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-12">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -43,51 +43,50 @@ export function FeaturedCard({ movie }: FeaturedCardProps) {
           className="max-w-2xl"
         >
           {/* Featured Badge */}
-          <div className="inline-block px-4 py-1 mb-4 rounded-full bg-gradient-brand text-xs font-semibold">
+          <div className="inline-flex items-center px-3 py-1 mb-3 rounded-full bg-gradient-to-r from-brand-purple/90 to-brand-blue/90 backdrop-blur-sm text-[10px] md:text-xs font-bold tracking-wider">
             FEATURED
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-6xl font-black mb-4 text-white drop-shadow-lg">
+          <h1 className="text-3xl md:text-6xl font-black mb-2 md:mb-4 text-white drop-shadow-2xl leading-tight">
             {movie.title}
           </h1>
 
           {/* Rating & Year */}
-          <div className="flex items-center gap-4 mb-4 text-sm">
-            <div className="flex items-center gap-1">
-              <Star size={18} className="fill-yellow-500 text-yellow-500" />
-              <span className="font-semibold">{formatRating(movie.vote_average)}</span>
+          <div className="flex items-center gap-3 mb-3 md:mb-4 text-xs md:text-sm">
+            <div className="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-2 py-1 rounded-lg">
+              <Star size={14} className="fill-yellow-500 text-yellow-500" />
+              <span className="font-bold">{formatRating(movie.vote_average)}</span>
             </div>
             {movie.release_date && (
-              <>
-                <span className="text-white/50">•</span>
-                <span className="text-white/90">
+              <div className="bg-black/40 backdrop-blur-sm px-2 py-1 rounded-lg">
+                <span className="font-semibold">
                   {new Date(movie.release_date).getFullYear()}
                 </span>
-              </>
+              </div>
             )}
           </div>
 
           {/* Overview */}
-          <p className="text-white/90 text-sm md:text-base mb-6 leading-relaxed max-w-xl">
+          <p className="text-white/90 text-xs md:text-base mb-4 md:mb-6 leading-relaxed max-w-xl line-clamp-2 md:line-clamp-3">
             {truncateText(movie.overview, 200)}
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-2 md:gap-4">
             <Link
               href={`/movies/${movie.id}/watch`}
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-brand hover:opacity-90 transition-opacity font-semibold"
+              className="inline-flex items-center gap-2 px-6 md:px-8 py-2.5 md:py-3 rounded-xl md:rounded-full bg-gradient-to-r from-brand-purple to-brand-blue hover:shadow-lg hover:shadow-brand-purple/30 active:scale-95 transition-all font-bold text-sm md:text-base"
             >
-              <Play size={20} fill="white" />
-              Watch Now
+              <Play size={18} fill="white" />
+              <span>Watch Now</span>
             </Link>
             <Link
               href={`/movies/${movie.id}`}
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full glass-effect hover:bg-white/20 transition-colors font-semibold"
+              className="inline-flex items-center gap-2 px-6 md:px-8 py-2.5 md:py-3 rounded-xl md:rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 active:scale-95 transition-all font-semibold text-sm md:text-base border border-white/20"
             >
-              <Info size={20} />
-              More Info
+              <Info size={18} />
+              <span>More Info</span>
             </Link>
           </div>
         </motion.div>
