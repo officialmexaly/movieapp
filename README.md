@@ -48,12 +48,24 @@ A modern, responsive movie streaming web application built with Next.js 14, feat
 npm install
 ```
 
-2. Run the development server:
+2. Set up TMDB API credentials:
+   - Go to [https://www.themoviedb.org/signup](https://www.themoviedb.org/signup) to create a free account
+   - Navigate to [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
+   - Request an API key (choose "Developer" option)
+   - Copy your credentials to `.env.local`:
+     ```bash
+     cp .env.example .env.local
+     ```
+   - Edit `.env.local` and add your credentials:
+     - `NEXT_PUBLIC_TMDB_ACCESS_TOKEN` - Your API Read Access Token (v4 Bearer Token)
+     - `NEXT_PUBLIC_TMDB_API_KEY` - Your API Key (v3 auth)
+
+3. Run the development server:
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ### Build for Production
 ```bash
@@ -63,7 +75,11 @@ npm start
 
 ## Environment Variables
 
-The `.env.local` file is already configured with TMDB API credentials.
+This application requires TMDB API credentials to fetch movie data. See the Installation section above for setup instructions.
+
+**Required variables:**
+- `NEXT_PUBLIC_TMDB_ACCESS_TOKEN` - TMDB API Read Access Token
+- `NEXT_PUBLIC_TMDB_API_KEY` - TMDB API Key (v3)
 
 ## License
 
